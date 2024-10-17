@@ -73,10 +73,40 @@ namespace LoopAssessment
                 Console.WriteLine("factorial of " +n+ "="+fact);
 
             Console.WriteLine("\r\n8.  Count the number of digits in any number.");
-            Console.WriteLine("\r\n 11.  Generate Fibonacci series. 0,1, 1, 2, 3, 5,8 ..... k. where k < n . n is entered by user ");
-            ;
+            Console.WriteLine("Enter the number");
+            int numDigi = Convert.ToInt32(Console.ReadLine());
+            int count = 0;
+            while (numDigi != 0)
+            {
+                numDigi = numDigi / 10;
+                ++count;
+            }
+            Console.WriteLine("Number of digit=" + count);
+
+            Console.WriteLine("\r\n11.  Generate Fibonacci series. 0,1, 1, 2, 3, 5,8 ..... k. where k < n . n is entered by user ");
+            Console.WriteLine("Enter the number");
+            int k = Convert.ToInt32(Console.ReadLine());
+            int s1 = 0, s2 = 1;
+
+            Console.WriteLine("Fibonacci series less than " + k + ": ");
+            if (k > 0)
+            {
+                Console.Write(s1 + " ");
+            }
+
+            while (s2 < n)
+            {
+                Console.Write(s2 + " ");
+                int next = s1 + s2;  
+                s1 = s2;  
+                s2 = next;  
+            }
+
+
+
             Console.WriteLine("\r\n12.  Find the sum of all digits of a number.");
             int digit = 435;
+            Console.WriteLine("Digit="+digit);
             int sum = 0;
             while (digit > 0)
             {
@@ -84,7 +114,8 @@ namespace LoopAssessment
                 sum = sum + rem;
                 digit = digit / 10;
             }
-            Console.WriteLine("Sum of digit=" +sum);
+
+            Console.WriteLine("Sum of digit =" +sum);
 
             Console.WriteLine();
             Console.WriteLine("\r\n13.  Find out if the given number is palindrome or not.");
@@ -110,18 +141,16 @@ namespace LoopAssessment
             Console.WriteLine("Enter the number:");
             int input = Convert.ToInt32(Console.ReadLine());
             int square = input * input;
-            while (input > 0)
-            {
+            
                 if (input % 10==square % 10){
-                    input = input / 10;
-                    square = square / 10;
+                    
                     Console.WriteLine("the number is automorphic");
                 }
                 else
                 {
                     Console.WriteLine("the number is not automorphic");
                 }
-            }
+            
 
         }
 

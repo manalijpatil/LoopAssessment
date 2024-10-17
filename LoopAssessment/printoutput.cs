@@ -8,5 +8,5 @@ namespace LoopAssessment
 {
     internal class printoutput
     {
-        
+    }
 }
